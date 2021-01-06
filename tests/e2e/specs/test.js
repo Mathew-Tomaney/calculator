@@ -72,6 +72,4 @@ describe('calculator', () => {
     cy.get('#operator_equals').click();
     cy.get('.display').should('contain', 'cannot divide by zero');
   });
-
-
 });

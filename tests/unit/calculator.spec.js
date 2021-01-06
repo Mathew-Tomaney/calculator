@@ -42,6 +42,19 @@ describe('App.vue', () => {
     expect(wrapper.vm.runningTotal).to.equal(721)
   })
 
+  it('can chain multiple operations', () => {
+    wrapper.vm.runningTotal = 0
+    wrapper.vm.numberClick('5');
+    wrapper.vm.operatorClick('+');
+    wrapper.vm.numberClick('1');
+    wrapper.vm.operatorClick('*');
+    wrapper.vm.numberClick('4')
+    wrapper.vm.operatorClick('/')
+    wrapper.vm.numberClick('2')
+    wrapper.vm.operatorClick('=')
+    expect(wrapper.vm.runningTotal).to.equal(12)
+  })
+
 })
 
 

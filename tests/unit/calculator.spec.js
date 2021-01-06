@@ -22,6 +22,19 @@ describe('App.vue', () => {
     wrapper.vm.subtract('4');
     expect(wrapper.vm.runningTotal).to.equal(3)
   })
+  
+  it('three multiplied by five is fifteen', () => {
+    wrapper.vm.previousTotal = 3
+    wrapper.vm.multiply('5');
+    expect(wrapper.vm.runningTotal).to.equal(15)
+  })
+  
+  it('twenty-one divided by seven is three', () => {
+    wrapper.vm.previousTotal = 21
+    wrapper.vm.divide('7');
+    expect(wrapper.vm.runningTotal).to.equal(3)
+  })
+
 })
 
 

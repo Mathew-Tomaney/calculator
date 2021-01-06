@@ -34,6 +34,13 @@ describe('App.vue', () => {
     wrapper.vm.divide('7');
     expect(wrapper.vm.runningTotal).to.equal(3)
   })
+  
+  it('can concatenate multiple number button clicks', () => {
+    wrapper.vm.numberClick('7');
+    wrapper.vm.numberClick('2');
+    wrapper.vm.numberClick('1');
+    expect(wrapper.vm.runningTotal).to.equal(721)
+  })
 
 })
 

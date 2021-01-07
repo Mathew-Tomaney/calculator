@@ -16,7 +16,7 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '42');
   });
 
-  it('arithmetical operatotions update display with result', () => {
+  it('arithmetical operations with standard numbers update display with result', () => {
     cy.get('#number4').click();
     cy.get('#number2').click();
     cy.get('#operator_add').click();
@@ -35,7 +35,7 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '3');
   });
 
-  it('negative numbers, decimals and recurring results all work as expected', () => {
+  it('negative numbers work as expected', () => {
     cy.get('#number1').click();
     cy.get('#operator_subtract').click();
     cy.get('#number9').click();
@@ -45,6 +45,14 @@ describe('calculator', () => {
     cy.get('#number3').click();
     cy.get('#operator_equals').click();
     cy.get('.display').should('contain', '-13.333333333333334');
+  });
+
+  it('decimals work as expected', () => {
+    cy.get('#number9').click();
+    cy.get('#operator_divide').click();
+    cy.get('#number2').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '4.5');
   });
 
   it('large numbers work', () => {
